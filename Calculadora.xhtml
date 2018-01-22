@@ -1,0 +1,84 @@
+# CalcJava2
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+
+      xmlns:h="http://java.sun.com/jsf/html"
+
+      xmlns:f="http://java.sun.com/jsf/core"
+
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+
+        <h:head>
+
+            <f:facet name="first">
+
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+
+                <title>Calculadora</title>
+
+            </f:facet>
+
+        </h:head>
+
+        <style>
+            .center {
+                margin: auto;
+                width: 60%;
+                border: 0px solid #73AD21;
+                padding: 10px;
+            }
+        </style>
+
+        <h:body style="background-color:#000000;">
+
+            <h:form id="formCalculadora">
+
+                <p:dialog header="Calculadora" widgetVar="mostrar" modal="true" visible="true" >
+
+                    <p:panelGrid class="center" columns="2" >
+
+                        <h:outputLabel value="Valor1:"/>
+
+                        <p:inputText id="valor1" size="10" maxlength="10" value="#{CalculadoraBean.valor1}" />
+
+                        <h:outputLabel value="Valor2:"/>
+
+                        <p:inputText id="valor2" size="10" maxlength="10" value="#{CalculadoraBean.valor2}" />
+
+                        <h:outputLabel value="Resultado:"/>
+
+                        <p:inputText id="resultado" size="10" maxlength="10" value="#{CalculadoraBean.resultado}" />
+
+
+
+
+                    </p:panelGrid>
+
+                    <h:commandButton id="somar" value="Somar" action="#{CalculadoraBean.somar}" />
+
+                    <h:commandButton id="dividir" value="Dividir" action="#{CalculadoraBean.dividir()}" />
+
+                    <h:commandButton id="multiplicar" value="Multiplicar" action="#{CalculadoraBean.multiplicar()}" />
+
+                    <h:commandButton id="subtrair" value="Subtrair" action="#{CalculadoraBean.subtrair()}" />
+
+                </p:dialog>
+
+                <p:messages class="center" id="messages" showDetail="true" closable="true">
+                </p:messages>
+
+            </h:form>
+
+        </h:body>
+
+    </f:view>
+
+</html>
+
